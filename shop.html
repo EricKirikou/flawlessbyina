@@ -7,20 +7,22 @@
     <style>
         /* Modern CSS Reset */
         :root {
-            --primary: #d4a373;
-            --primary-dark: #c08a5a;
-            --secondary: #f8f4e9;
-            --dark: #2a2a2a;
-            --light: #ffffff;
-            --gray: #f1f1f1;
+            --primary: #D4AF8A; /* Dusty gold */
+            --primary-dark: #B38B6D;
+            --secondary: #F8E8E8; /* Light blush pink */
+            --dark: #1A1A1A; /* Deep black */
+            --light: #FFFFFF;
+            --gray: #F5F5F5;
             --text: #333333;
             --text-light: #777777;
             --shadow: 0 4px 20px rgba(0,0,0,0.08);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --border-radius: 8px;
-            --gold-gradient: linear-gradient(135deg, #d4a373 0%, #f3d5b5 100%);
+            --gold-gradient: linear-gradient(135deg, #D4AF8A 0%, #E8C8A9 100%); /* Dusty gold gradient */
+            --pink-accent: #E8B4B4; /* Blush pink accent */
             --nav-height: 70px;
         }
+        
 
         * {
             margin: 0;
@@ -68,7 +70,7 @@
         .btn-primary {
             background: var(--gold-gradient);
             color: var(--dark);
-            box-shadow: 0 2px 10px rgba(212, 163, 115, 0.3);
+            box-shadow: 0 2px 10px rgba(212, 175, 138, 0.3);
         }
 
         .btn-primary:hover {
@@ -109,7 +111,7 @@
             width: 100%;
             top: 33px;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(26, 26, 26, 0.05);
         }
 
         .header-container {
@@ -265,7 +267,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(232, 180, 180, 0.2); /* Blush pink overlay */
         }
 
         .hero-content {
@@ -388,7 +390,7 @@
         .feature-icon {
             font-size: 40px;
             margin-bottom: 20px;
-            background: var(--gold-gradient);
+            background: linear-gradient(135deg, var(--pink-accent) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -698,7 +700,7 @@
         }
 
         .product-badge.sale {
-            background: #ff4d4d;
+            background: var(--pink-accent);
             color: white;
         }
 
@@ -737,7 +739,7 @@
         }
 
         .product-action:hover {
-            background: var(--primary);
+            background: var(--pink-accent);
             color: var(--light);
             transform: scale(1.1);
         }
@@ -807,7 +809,7 @@
         }
 
         .add-to-cart:hover {
-            background: var(--primary);
+            background: var(--pink-accent);
         }
 
         /* Pagination */
@@ -840,8 +842,8 @@
             background-color: rgba(0,0,0,0.05);
         }
 
-        /* Footer */
-        footer {
+          /* Footer */
+          footer {
             background-color: var(--dark);
             color: var(--light);
             padding: 60px 0 0;
@@ -853,18 +855,18 @@
             margin: 0 auto;
             padding: 0 5%;
         }
-
+        
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-bottom: 60px;
         }
-
+        
         .footer-column {
             margin-bottom: 30px;
         }
-
+        
         .footer-column h3 {
             font-size: 18px;
             margin-bottom: 25px;
@@ -873,7 +875,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
+        
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -881,24 +883,30 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--gold-gradient);
+            background: linear-gradient(135deg, var(--pink-accent) 0%, var(--primary) 100%);
         }
-
+        
+        .footer-column ul {
+            list-style: none; /* Removes bullet points */
+            padding-left: 0;  /* Removes default padding */
+        }
+        
         .footer-column ul li {
             margin-bottom: 12px;
         }
-
+        
         .footer-column ul li a {
             color: var(--text-light);
             font-size: 14px;
             transition: var(--transition);
+            text-decoration: none; /* Ensures no underline */
         }
-
+        
         .footer-column ul li a:hover {
             color: var(--primary);
             padding-left: 5px;
         }
-
+        
         .footer-column p {
             color: var(--text-light);
             font-size: 14px;
@@ -925,7 +933,7 @@
         }
 
         .social-links a:hover {
-            background: var(--gold-gradient);
+            background: linear-gradient(135deg, var(--pink-accent) 0%, var(--primary) 100%);
             color: var(--dark);
             transform: translateY(-3px);
         }
