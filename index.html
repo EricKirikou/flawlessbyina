@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flawless by Ina | Premium Hair Extensions & Wigs</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .top-bar {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            z-index: 101;
+        }
+        
+        .logo span {
+            color: #d4a373;
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-icons a {
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        
+        /* Currency Selector */
+        .currency-selector {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .currency-btn {
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .currency-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 10px 0;
+            min-width: 100px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 102;
+        }
+        
+        .currency-dropdown.show {
+            display: block;
+        }
+        
+        .currency-dropdown li {
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .currency-dropdown li:hover {
+            background-color: #f8f8f8;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        /* Hero/Banner Section */
+        .hero {
+            height: 80vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-content {
+            width: 50%;
+            max-width: 600px;
+            padding-left: 10%;
+            color: #fff;
+        }
+        
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            margin-bottom: 30px;
+            font-size: clamp(16px, 2vw, 18px);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d4a373;
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #c08a5a;
+            transform: translateY(-2px);
+        }
+        
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+        
+        /* Collections Section */
+        .collections {
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: clamp(26px, 3vw, 32px);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: #d4a373;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .collection-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .collection-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: #fff;
+            text-align: left;
+        }
+        
+        .collection-overlay h3 {
+            font-size: clamp(18px, 2vw, 22px);
+            margin-bottom: 5px;
+        }
+        
+        .price {
+            font-size: 16px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: #f9f9f9;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            padding: 30px 15px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #d4a373;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 5% 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #d4a373;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #bbb;
+        }
+        
+        .footer-column p {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #d4a373;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 30px;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+                transition: left 0.3s ease;
+                z-index: 100;
+            }
+            
+            nav ul.show {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-icons a:not(:last-child) {
+                display: none;
+            }
+            
+            .hero-content {
+                width: 100%;
+                padding: 0 5%;
+                text-align: center;
+            }
+            
+            .hero h1, .hero p {
+                text-align: center;
+            }
+            
+            .btn {
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .top-bar {
+                font-size: 10px;
+                padding: 8px 0;
+            }
+            
+            .main-header {
+                padding: 15px 5%;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .collection-item {
+                height: 300px;
+            }
+            
+            .collection-overlay {
+                padding: 15px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            Free shipping on orders over $100 | 30-day returns
+        </div>
+        <div class="main-header">
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">FLAWLESS<span>byIna</span></div>
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">Hair</a></li>
+                    <li><a href="#">Wigs</a></li>
+                    <li><a href="#">Bundles</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag"></i></a>
+                <div class="currency-selector">
+                    <button class="currency-btn">USD <i class="fas fa-chevron-down"></i></button>
+                    <ul class="currency-dropdown">
+                        <li data-currency="USD">USD ($)</li>
+                        <li data-currency="EUR">EUR (€)</li>
+                        <li data-currency="GBP">GBP (£)</li>
+                        <li data-currency="CAD">CAD ($)</li>
+                        <li data-currency="GHS">GHS (₵)</li>
+                        <li data-currency="NGN">NGN (₦)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="hero-content">
+                <h1>Premium Hair Extensions & Wigs</h1>
+                <p>100% Remy human hair, ethically sourced and crafted for perfection.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="hero-content">
+                <h1>Summer Collection 2023</h1>
+                <p>New arrivals with 20% off for the first 100 customers.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <div class="hero-content">
+                <h1>Brazilian Hair Special</h1>
+                <p>Silky straight and natural curly textures now available.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+        
+        <div class="slide-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+        </div>
+    </section>
+
+    <section class="collections">
+        <h2 class="section-title">Our Collections</h2>
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Brazilian Hair">
+                <div class="collection-overlay">
+                    <h3>Brazilian Collection</h3>
+                    <p class="price" data-usd="199" data-eur="179" data-gbp="159" data-cad="259" data-ghs="2400" data-ngn="85000">From $199</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Peruvian Hair">
+                <div class="collection-overlay">
+                    <h3>Peruvian Collection</h3>
+                    <p class="price" data-usd="249" data-eur="229" data-gbp="199" data-cad="329" data-ghs="3000" data-ngn="105000">From $249</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wigs">
+                <div class="collection-overlay">
+                    <h3>Luxury Wigs</h3>
+                    <p class="price" data-usd="299" data-eur="269" data-gbp="239" data-cad="389" data-ghs="3600" data-ngn="125000">From $299</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose Flawless</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>100% Human Hair</h3>
+                <p>Premium Remy human hair with intact cuticles for natural movement and shine.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Ethically Sourced</h3>
+                <p>We work directly with suppliers who practice ethical hair sourcing.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Fast Shipping</h3>
+                <p>Free expedited shipping on orders over $100.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <h3>Easy Returns</h3>
+                <p>30-day return policy on all unused products.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Hair Extensions</a></li>
+                    <li><a href="#">Wigs</a></li>
+                    <li><a href="#">Bundles</a></li>
+                    <li><a href="#">Closures</a></li>
+                    <li><a href="#">Frontals</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>123 Beauty Avenue<br>New York, NY 10001</p>
+                <p>Email: info@flawlessbyina.com<br>Phone: (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Flawless by Ina. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainMenu = document.getElementById('main-menu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainMenu.classList.toggle('show');
+            this.querySelector('i').classList.toggle('fa-times');
+            this.querySelector('i').classList.toggle('fa-bars');
+        });
+        
+        // Currency Selector
+        const currencyBtn = document.querySelector('.currency-btn');
+        const currencyDropdown = document.querySelector('.currency-dropdown');
+        const currencyOptions = document.querySelectorAll('.currency-dropdown li');
+        const priceElements = document.querySelectorAll('.price');
+        
+        // Currency conversion rates and symbols
+        const currencySymbols = {
+            USD: '$',
+            EUR: '€',
+            GBP: '£',
+            CAD: '$',
+            GHS: '₵',
+            NGN: '₦'
+        };
+        
+        const shippingThresholds = {
+            USD: { amount: 100, symbol: '$' },
+            EUR: { amount: 90, symbol: '€' },
+            GBP: { amount: 80, symbol: '£' },
+            CAD: { amount: 130, symbol: '$' },
+            GHS: { amount: 1200, symbol: '₵' },
+            NGN: { amount: 45000, symbol: '₦' }
+        };
+        
+        // Show/hide currency dropdown
+        currencyBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currencyDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            currencyDropdown.classList.remove('show');
+        });
+        
+        // Currency selection
+        currencyOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const currency = this.getAttribute('data-currency');
+                updatePrices(currency);
+                currencyBtn.innerHTML = `${currency} <i class="fas fa-chevron-down"></i>`;
+                currencyDropdown.classList.remove('show');
+            });
+        });
+        
+        // Update all prices based on selected currency
+        function updatePrices(currency) {
+            priceElements.forEach(priceEl => {
+                const newPrice = priceEl.getAttribute(`data-${currency.toLowerCase()}`);
+                priceEl.textContent = `From ${currencySymbols[currency]}${newPrice}`;
+            });
+            
+            // Update top bar message
+            const topBar = document.querySelector('.top-bar');
+            const threshold = shippingThresholds[currency];
+            topBar.textContent = `Free shipping on orders over ${threshold.symbol}${threshold.amount} | 30-day returns`;
+        }
+        
+        // Banner Slider Functionality
+        const slides = document.querySelectorAll('.hero-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            
+            // Show selected slide
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        // Auto-rotate slides every 5 seconds
+        function autoRotateSlides() {
+            const nextSlide = (currentSlide + 1) % slides.length;
+            showSlide(nextSlide);
+        }
+        
+        // Set up click events for indicators
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        // Start auto rotation
+        let slideInterval = setInterval(autoRotateSlides, 5000);
+        
+        // Pause auto rotation when hovering over slider
+        const heroSection = document.querySelector('.hero');
+        heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        heroSection.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoRotateSlides, 5000);
+        });
+        
+        // Show first slide initially
+        showSlide(0);
+    </script>
+</body>
+</html>
