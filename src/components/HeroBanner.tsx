@@ -25,7 +25,7 @@ const HeroBanner = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full opacity-20 md:opacity-40 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVShkKotmXckb8gymjdS1HhFJOGtt8MYj0WBLROkH3EQ&s')] bg-cover bg-center"></div>
+      <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full opacity-20 md:opacity-40 bg-[url('https://st4.depositphotos.com/10614052/38566/i/450/depositphotos_385665488-stock-photo-unusual-wig-comb-cosmetics-hair.jpg')] bg-cover bg-center"></div>
     </div>
   );
 };
