@@ -10,8 +10,10 @@ const HeroBanner = () => {
             Beauty Tips & Inspiration for <span className="text-pink-600">Everyone</span>
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            Discover the latest makeup trends, skincare routines, and beauty secrets 
-            to enhance your natural beauty and feel confident every day.
+            Discover luxury Raw/ Virgin hair from Vietnam and South India. 
+            Ethically sourced, both processed and unprocessed, for my 
+            flawless queens who expect nothing less than 
+            excellence and quality
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="bg-pink-600 hover:bg-pink-700">
