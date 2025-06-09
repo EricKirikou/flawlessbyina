@@ -36,7 +36,7 @@ const NewsletterSubscribe = () => {
             Subscribe to My Newsletter
           </h2>
           <p className="text-gray-600 mb-8">
-            Get the latest beauty tips, product reviews, and exclusive content delivered directly to your inbox.
+            Get the latest exclusive deals, new drops, style inspo. and many more delivered directly to your inbox
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
