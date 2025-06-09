@@ -4,7 +4,7 @@ import { Check, Shield, Zap, Heart, Anchor, Truck } from "lucide-react";
 const benefits = [
   {
     title: "100% Raw, Unprocessed Human Hair",
-    content: "Authentic virgin hair with intact cuticles for the most natural look and feel.",
+    content: "Authentic luxury raw hair with intact cuticles for the most natural look and feel.",
     icon: Check,
   },
   {
