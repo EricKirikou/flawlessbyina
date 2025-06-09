@@ -19,7 +19,7 @@ const benefits = [
   },
   {
     title: "Tangle-Free, Shed-Free Guarantee",
-    content: "Our quality control ensures minimal shedding and easy maintenance.",
+    content: "Our quality control ensures quality hairs that do not shed and easy to be maintenance.",
     icon: Heart,
   },
   {
