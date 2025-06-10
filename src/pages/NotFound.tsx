@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
       <main className="flex-grow flex items-center justify-center py-16">
         <div className="text-center max-w-md px-4">
           <h1 className="text-6xl font-bold text-pink-600 mb-6">404</h1>

@@ -82,7 +82,9 @@ const Navigation = () => {
 
   return (
     <>
+      {/* Single instance of HeaderBanner - removed duplicate */}
       <HeaderBanner />
+      
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-dustygold/20 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -108,226 +110,88 @@ const Navigation = () => {
                     <Link to="/shop" className="px-4 py-2 text-customblack hover:text-dustygold transition-colors">Shop</Link>
                   </NavigationMenuItem>
                   
+                  {/* Wigs Menu */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent hover:bg-blushpink/10 text-customblack hover:text-dustygold">Wigs</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">All Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Browse our entire collection of premium wigs
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/lace-front" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Lace Front Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Natural-looking hairline with HD/Transparent lace
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/full-lace" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Full Lace Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Premium wigs with lace all around the perimeter
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/360-lace" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">360 Lace Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                All-around natural hairline for versatile styling
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/upart-vpart" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">U-Part / V-Part Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Leave out your own hair for a natural blend
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/headband" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Headband Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Beginner-friendly wigs with attached headband
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/closure" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Closure Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Wigs with a natural-looking top closure
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/glueless" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Glueless Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Beginner-friendly wigs that require no adhesives
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/custom" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Custom Units</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Personalized wigs made to your specifications
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/wigs/colored" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Colored Wigs</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Pre-colored wigs in various shades and styles
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
+                        {[
+                          { path: "/wigs", title: "All Wigs", desc: "Browse our entire collection of premium wigs" },
+                          { path: "/wigs/lace-front", title: "Lace Front Wigs", desc: "Natural-looking hairline with HD/Transparent lace" },
+                          { path: "/wigs/full-lace", title: "Full Lace Wigs", desc: "Premium wigs with lace all around the perimeter" },
+                          { path: "/wigs/360-lace", title: "360 Lace Wigs", desc: "All-around natural hairline for versatile styling" },
+                          { path: "/wigs/upart-vpart", title: "U-Part / V-Part Wigs", desc: "Leave out your own hair for a natural blend" },
+                          { path: "/wigs/headband", title: "Headband Wigs", desc: "Beginner-friendly wigs with attached headband" },
+                          { path: "/wigs/closure", title: "Closure Wigs", desc: "Wigs with a natural-looking top closure" },
+                          { path: "/wigs/glueless", title: "Glueless Wigs", desc: "Beginner-friendly wigs that require no adhesives" },
+                          { path: "/wigs/custom", title: "Custom Units", desc: "Personalized wigs made to your specifications" },
+                          { path: "/wigs/colored", title: "Colored Wigs", desc: "Pre-colored wigs in various shades and styles" }
+                        ].map((item) => (
+                          <li key={item.path}>
+                            <NavigationMenuLink asChild>
+                              <Link to={item.path} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
+                                <div className="text-sm font-medium leading-none">{item.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+                                  {item.desc}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   
+                  {/* Hair Extensions Menu */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent hover:bg-blushpink/10 text-customblack hover:text-dustygold">Hair Extensions</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/hair-extensions" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">All Hair Extensions</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Browse our collection of premium hair extensions
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/hair-extensions/ponytails" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Ponytails</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Easy to fix ponytails for everyday use
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/hair-extensions/bundles" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Bundle Deals</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Vietnamese raw hair, Virgin unprocessed hair
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
+                        {[
+                          { path: "/hair-extensions", title: "All Hair Extensions", desc: "Browse our collection of premium hair extensions" },
+                          { path: "/hair-extensions/ponytails", title: "Ponytails", desc: "Easy to fix ponytails for everyday use" },
+                          { path: "/hair-extensions/bundles", title: "Bundle Deals", desc: "Vietnamese raw hair, Virgin unprocessed hair" }
+                        ].map((item) => (
+                          <li key={item.path}>
+                            <NavigationMenuLink asChild>
+                              <Link to={item.path} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
+                                <div className="text-sm font-medium leading-none">{item.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+                                  {item.desc}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   
+                  {/* Textures Menu */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent hover:bg-blushpink/10 text-customblack hover:text-dustygold">Textures</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/luxury-virgin-straight" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Luxury Virgin Straight</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Premium luxury virgin straight hair
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/luxury-virgin-bodywave" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Luxury Virgin Bodywave</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Luxury virgin bodywave texture
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/virgin-deepwave" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Virgin Deepwave</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Beautiful virgin deepwave pattern
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/vietnam-raw-hair" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Vietnam Raw Hair</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Premium Vietnam raw hair from single donor
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/yaki-straight" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Yaki Straight</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Natural yaki straight texture
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/raw-burmese-curls" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Raw Burmese Curls</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Authentic raw Burmese curly hair
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/textures/raw-cambodian-curls" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Raw Cambodian Curls</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Premium raw Cambodian curly hair
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
+                        {[
+                          { path: "/textures/luxury-virgin-straight", title: "Luxury Virgin Straight", desc: "Premium luxury virgin straight hair" },
+                          { path: "/textures/luxury-virgin-bodywave", title: "Luxury Virgin Bodywave", desc: "Luxury virgin bodywave texture" },
+                          { path: "/textures/virgin-deepwave", title: "Virgin Deepwave", desc: "Beautiful virgin deepwave pattern" },
+                          { path: "/textures/vietnam-raw-hair", title: "Vietnam Raw Hair", desc: "Premium Vietnam raw hair from single donor" },
+                          { path: "/textures/yaki-straight", title: "Yaki Straight", desc: "Natural yaki straight texture" },
+                          { path: "/textures/raw-burmese-curls", title: "Raw Burmese Curls", desc: "Authentic raw Burmese curly hair" },
+                          { path: "/textures/raw-cambodian-curls", title: "Raw Cambodian Curls", desc: "Premium raw Cambodian curly hair" }
+                        ].map((item) => (
+                          <li key={item.path}>
+                            <NavigationMenuLink asChild>
+                              <Link to={item.path} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
+                                <div className="text-sm font-medium leading-none">{item.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+                                  {item.desc}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -340,30 +204,26 @@ const Navigation = () => {
                     <Link to="/best-sellers" className="px-4 py-2 text-customblack hover:text-dustygold transition-colors">Best Sellers</Link>
                   </NavigationMenuItem>
                   
+                  {/* Services Menu */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent hover:bg-blushpink/10 text-customblack hover:text-dustygold">Services</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4">
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/salon" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Wigs & Hairstyling Services</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Wig installation, Sew-in, Frontal & Closure installations
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        <li>
-                          <NavigationMenuLink asChild>
-                            <Link to="/beauty-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
-                              <div className="text-sm font-medium leading-none">Makeup Services</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                                Bridal makeup, Special events, Everyday looks & more
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
+                        {[
+                          { path: "/salon", title: "Wigs & Hairstyling Services", desc: "Wig installation, Sew-in, Frontal & Closure installations" },
+                          { path: "/beauty-services", title: "Makeup Services", desc: "Bridal makeup, Special events, Everyday looks & more" }
+                        ].map((item) => (
+                          <li key={item.path}>
+                            <NavigationMenuLink asChild>
+                              <Link to={item.path} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blushpink/20 hover:text-dustygold">
+                                <div className="text-sm font-medium leading-none">{item.title}</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+                                  {item.desc}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -371,6 +231,7 @@ const Navigation = () => {
               </NavigationMenu>
             </div>
             
+            {/* Mobile menu button */}
             <div className="lg:hidden">
               <button onClick={toggleMenu} className="text-customblack hover:text-dustygold transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -379,6 +240,7 @@ const Navigation = () => {
               </button>
             </div>
             
+            {/* Desktop right-side icons */}
             <div className="hidden lg:flex items-center space-x-4">
               <a href="tel:+447909009155" className="flex items-center text-customblack hover:text-dustygold transition-colors">
                 <Phone size={18} className="mr-2" />
@@ -412,110 +274,71 @@ const Navigation = () => {
                   Shop
                 </Link>
 
-                {/* Wigs Submenu */}
-                <div className="border-b border-gray-100 pb-2">
-                  <button 
-                    onClick={() => toggleSubmenu('wigs')} 
-                    className="flex items-center justify-between w-full px-3 py-2 rounded-md hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors"
-                  >
-                    <span>Wigs</span>
-                    {expandedSubmenus.wigs ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </button>
-                  {expandedSubmenus.wigs && (
-                    <div className="pl-4 mt-1 space-y-1 bg-gray-50/50 rounded-md py-2">
-                      <Link to="/wigs" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        All Wigs
-                      </Link>
-                      <Link to="/wigs/lace-front" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Lace Front Wigs
-                      </Link>
-                      <Link to="/wigs/full-lace" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Full Lace Wigs
-                      </Link>
-                      <Link to="/wigs/360-lace" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        360 Lace Wigs
-                      </Link>
-                      <Link to="/wigs/upart-vpart" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        U-Part / V-Part Wigs
-                      </Link>
-                      <Link to="/wigs/headband" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Headband Wigs
-                      </Link>
-                      <Link to="/wigs/closure" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Closure Wigs
-                      </Link>
-                      <Link to="/wigs/glueless" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Glueless Wigs
-                      </Link>
-                      <Link to="/wigs/custom" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Custom Units
-                      </Link>
-                      <Link to="/wigs/colored" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Colored Wigs
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* Hair Extensions Submenu */}
-                <div className="border-b border-gray-100 pb-2">
-                  <button 
-                    onClick={() => toggleSubmenu('hairExt')} 
-                    className="flex items-center justify-between w-full px-3 py-2 rounded-md hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors"
-                  >
-                    <span>Hair Extensions</span>
-                    {expandedSubmenus.hairExt ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </button>
-                  {expandedSubmenus.hairExt && (
-                    <div className="pl-4 mt-1 space-y-1 bg-gray-50/50 rounded-md py-2">
-                      <Link to="/hair-extensions" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        All Hair Extensions
-                      </Link>
-                      <Link to="/hair-extensions/ponytails" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Ponytails
-                      </Link>
-                      <Link to="/hair-extensions/bundles" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Bundle Deals
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* Textures Submenu */}
-                <div className="border-b border-gray-100 pb-2">
-                  <button 
-                    onClick={() => toggleSubmenu('textures')} 
-                    className="flex items-center justify-between w-full px-3 py-2 rounded-md hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors"
-                  >
-                    <span>Textures</span>
-                    {expandedSubmenus.textures ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </button>
-                  {expandedSubmenus.textures && (
-                    <div className="pl-4 mt-1 space-y-1 bg-gray-50/50 rounded-md py-2">
-                      <Link to="/textures/luxury-virgin-straight" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Luxury Virgin Straight
-                      </Link>
-                      <Link to="/textures/luxury-virgin-bodywave" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Luxury Virgin Bodywave
-                      </Link>
-                      <Link to="/textures/virgin-deepwave" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Virgin Deepwave
-                      </Link>
-                      <Link to="/textures/vietnam-raw-hair" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Vietnam Raw Hair
-                      </Link>
-                      <Link to="/textures/yaki-straight" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Yaki Straight
-                      </Link>
-                      <Link to="/textures/raw-burmese-curls" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Raw Burmese Curls
-                      </Link>
-                      <Link to="/textures/raw-cambodian-curls" onClick={() => setIsMenuOpen(false)} className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
-                        Raw Cambodian Curls
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                {/* Mobile submenus */}
+                {[
+                  {
+                    key: 'wigs',
+                    title: 'Wigs',
+                    items: [
+                      { path: "/wigs", title: "All Wigs" },
+                      { path: "/wigs/lace-front", title: "Lace Front Wigs" },
+                      { path: "/wigs/full-lace", title: "Full Lace Wigs" },
+                      { path: "/wigs/360-lace", title: "360 Lace Wigs" },
+                      { path: "/wigs/upart-vpart", title: "U-Part / V-Part Wigs" },
+                      { path: "/wigs/headband", title: "Headband Wigs" },
+                      { path: "/wigs/closure", title: "Closure Wigs" },
+                      { path: "/wigs/glueless", title: "Glueless Wigs" },
+                      { path: "/wigs/custom", title: "Custom Units" },
+                      { path: "/wigs/colored", title: "Colored Wigs" }
+                    ]
+                  },
+                  {
+                    key: 'hairExt',
+                    title: 'Hair Extensions',
+                    items: [
+                      { path: "/hair-extensions", title: "All Hair Extensions" },
+                      { path: "/hair-extensions/ponytails", title: "Ponytails" },
+                      { path: "/hair-extensions/bundles", title: "Bundle Deals" }
+                    ]
+                  },
+                  {
+                    key: 'textures',
+                    title: 'Textures',
+                    items: [
+                      { path: "/textures/luxury-virgin-straight", title: "Luxury Virgin Straight" },
+                      { path: "/textures/luxury-virgin-bodywave", title: "Luxury Virgin Bodywave" },
+                      { path: "/textures/virgin-deepwave", title: "Virgin Deepwave" },
+                      { path: "/textures/vietnam-raw-hair", title: "Vietnam Raw Hair" },
+                      { path: "/textures/yaki-straight", title: "Yaki Straight" },
+                      { path: "/textures/raw-burmese-curls", title: "Raw Burmese Curls" },
+                      { path: "/textures/raw-cambodian-curls", title: "Raw Cambodian Curls" }
+                    ]
+                  }
+                ].map((menu) => (
+                  <div key={menu.key} className="border-b border-gray-100 pb-2">
+                    <button 
+                      onClick={() => toggleSubmenu(menu.key)} 
+                      className="flex items-center justify-between w-full px-3 py-2 rounded-md hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors"
+                    >
+                      <span>{menu.title}</span>
+                      {expandedSubmenus[menu.key] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    </button>
+                    {expandedSubmenus[menu.key] && (
+                      <div className="pl-4 mt-1 space-y-1 bg-gray-50/50 rounded-md py-2">
+                        {menu.items.map((item) => (
+                          <Link 
+                            key={item.path}
+                            to={item.path} 
+                            onClick={() => setIsMenuOpen(false)} 
+                            className="block px-3 py-1.5 rounded-md text-sm hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors"
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
 
                 <Link to="/new-arrivals" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md hover:bg-blushpink/10 text-customblack hover:text-dustygold transition-colors">
                   New Arrivals
@@ -525,7 +348,7 @@ const Navigation = () => {
                   Best Sellers
                 </Link>
 
-                {/* Services Submenu */}
+                {/* Services Mobile Submenu */}
                 <div className="border-b border-gray-100 pb-2">
                   <button 
                     onClick={() => toggleSubmenu('services')} 
@@ -546,7 +369,7 @@ const Navigation = () => {
                   )}
                 </div>
                 
-                {/* Contact info for mobile */}
+                {/* Mobile contact info */}
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <a href="tel:+447909009155" className="flex items-center px-3 py-2 text-customblack hover:text-dustygold transition-colors">
                     <Phone size={18} className="mr-2" />
