@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import { Check, ChevronRight, ShoppingCart, Heart, Share2 } from "lucide-react";
+import { Check, ChevronRight, ShoppingCart, Heart, Share2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
@@ -53,12 +53,16 @@ const VietnamRawHair = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {/* Image Gallery */}
         <div>
-          <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-square shadow-md">
+          <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-square shadow-md relative">
             <img
               src={selectedImage}
               alt="Raw Vietnamese Straight Hair Bundle"
               className="w-full h-full object-cover object-center transition-opacity duration-300"
             />
+            {/* Authenticity Badge */}
+            <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+              AUTHENTIC
+            </div>
           </div>
           <div className="grid grid-cols-5 gap-3">
             {images.map((image, index) => (
@@ -83,10 +87,21 @@ const VietnamRawHair = () => {
 
         {/* Product Details */}
         <div>
+          {/* Star Rating */}
+          <div className="flex items-center mb-2">
+            <div className="flex">
+              {[...Array(4)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+              ))}
+              <Star className="w-5 h-5 text-yellow-400" />
+            </div>
+            <span className="ml-2 text-sm text-gray-600">(36 reviews)</span>
+          </div>
+
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Raw Vietnamese Straight Bundles
           </h1>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-xl text-dustygold font-medium mb-4">
             From £95 | Lengths: 10”-30”
           </p>
 
@@ -151,7 +166,7 @@ const VietnamRawHair = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="flex-1 bg-dustygold hover:bg-blushpink h-12 text-white shadow-md hover:shadow-lg transition-all">
               <ShoppingCart className="mr-2 h-4 w-4" />
-              Add to Cart - £{selectedLength === "30" ? "120" : "95"}
+              Add to Cart - £{selectedLength === "30”" ? "120" : "95"}
             </Button>
             <div className="flex gap-2">
               <Button variant="outline" className="h-12 border-gray-300 hover:border-dustygold">
@@ -162,6 +177,19 @@ const VietnamRawHair = () => {
                 <Share2 className="mr-2 h-4 w-4 text-gray-700" />
                 <span className="text-gray-700">Share</span>
               </Button>
+            </div>
+          </div>
+
+          {/* Guarantee Badge */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 flex items-start">
+            <div className="bg-green-100 p-2 rounded-full mr-3">
+              <Check className="h-5 w-5 text-green-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800">Quality Guarantee</h3>
+              <p className="text-sm text-gray-600">
+                30-day money back guarantee. Free returns on unused hair.
+              </p>
             </div>
           </div>
         </div>

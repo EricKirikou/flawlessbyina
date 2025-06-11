@@ -28,7 +28,7 @@ import BeautyServices from "./pages/BeautyServices";
 
 // Texture Pages
 import VietnamRawHair from "./pages/Textures/VietnamRawHair";
-// import LuxuryVirginStraight from "./pages/Textures/LuxuryVirginStraight";
+import LuxuryVirginStraight from "./pages/Textures/LuxuryVirginStraight";
 // import LuxuryVirginBodywave from "./pages/Textures/LuxuryVirginBodywave";
 // import VirginDeepwave from "./pages/Textures/VirginDeepwave";
 // import YakiStraight from "./pages/Textures/YakiStraight";
@@ -79,12 +79,12 @@ const App = () => (
                 
                 {/* Texture Routes */}
                 <Route path="/textures/vietnam-raw-hair" element={<VietnamRawHair />} />
-                {/* <Route path="/textures/luxury-virgin-straight" element={<LuxuryVirginStraight />} />
-                <Route path="/textures/luxury-virgin-bodywave" element={<LuxuryVirginBodywave />} />
+                <Route path="/textures/luxury-virgin-straight" element={<LuxuryVirginStraight />} />
+                {/* <Route path="/textures/luxury-virgin-bodywave" element={<LuxuryVirginBodywave />} />
                 <Route path="/textures/virgin-deepwave" element={<VirginDeepwave />} />
                 <Route path="/textures/yaki-straight" element={<YakiStraight />} />
                 <Route path="/textures/raw-burmese-curls" element={<RawBurmeseCurls />} />
-                <Route path="/textures/raw-cambodian-curls" element={<RawCambodianCurls />} /> */}
+                <Route path="/textures/raw-cambodian-curls" element={<RawCambodianCurls />} /> */} */
                 
                 {/* Other Routes */}
                 <Route path="/salon" element={<Salon />} />
