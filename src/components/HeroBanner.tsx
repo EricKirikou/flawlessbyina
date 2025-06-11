@@ -29,7 +29,7 @@ const HeroBanner = () => {
         <img
           src="/lovable-uploads/ina.jpg"
           alt="Flawless By Ina beauty products"
-          className="w-full h-full object-cover opacity-20 md:opacity-40"
+          className="w-full h-full object-cover opacity-80 md:opacity-40"
         />
       </div>    </div>
   );
