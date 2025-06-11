@@ -6,14 +6,13 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from 
 
 const LuxuryVirginStraight = () => {
   // Using high-quality placeholder images
-  const images = [
-    "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-  ];
-
+ const images = [
+  "/lovable-uploads/straight.jpg",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+];
   const lengths = ["12”", "14”", "16”", "18”", "20”", "22”", "24”", "26”", "28”", "30”"];
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [selectedLength, setSelectedLength] = useState(lengths[2]); // Default to 16"
