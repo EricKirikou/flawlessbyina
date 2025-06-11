@@ -35,6 +35,17 @@ import LuxuryVirginStraight from "./pages/Textures/LuxuryVirginStraight";
 // import RawBurmeseCurls from "./pages/Textures/RawBurmeseCurls";
 // import RawCambodianCurls from "./pages/Textures/RawCambodianCurls";
 
+// Wig Type Pages
+// import LaceFrontWigs from "./pages/Wigs/LaceFrontWigs";
+// import FullLaceWigs from "./pages/Wigs/FullLaceWigs";
+// import ThreeSixtyLaceWigs from "./pages/Wigs/ThreeSixtyLaceWigs";
+// import UPartVPartWigs from "./pages/Wigs/UPartVPartWigs";
+// import HeadbandWigs from "./pages/Wigs/HeadbandWigs";
+// import ClosureWigs from "./pages/Wigs/ClosureWigs";
+// import GluelessWigs from "./pages/Wigs/GluelessWigs";
+import CustomWigs from "./pages/Wigs/CustomWigs";
+import ColoredWigs from "./pages/Wigs/ColoredWigs";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -62,15 +73,15 @@ const App = () => (
                 
                 {/* Wigs Routes */}
                 <Route path="/wigs" element={<Wigs />} />
-                <Route path="/wigs/lace-front" element={<Wigs />} />
-                <Route path="/wigs/full-lace" element={<Wigs />} />
-                <Route path="/wigs/360-lace" element={<Wigs />} />
-                <Route path="/wigs/upart-vpart" element={<Wigs />} />
-                <Route path="/wigs/headband" element={<Wigs />} />
-                <Route path="/wigs/closure" element={<Wigs />} />
-                <Route path="/wigs/glueless" element={<Wigs />} />
-                <Route path="/wigs/custom" element={<Wigs />} />
-                <Route path="/wigs/colored" element={<Wigs />} />
+                {/* <Route path="/wigs/lace-front" element={<LaceFrontWigs />} />
+                <Route path="/wigs/full-lace" element={<FullLaceWigs />} />
+                <Route path="/wigs/360-lace" element={<ThreeSixtyLaceWigs />} />
+                <Route path="/wigs/upart-vpart" element={<UPartVPartWigs />} />
+                <Route path="/wigs/headband" element={<HeadbandWigs />} />
+                <Route path="/wigs/closure" element={<ClosureWigs />} />
+                <Route path="/wigs/glueless" element={<GluelessWigs />} /> */}
+                <Route path="/wigs/custom" element={<CustomWigs />} /> 
+                <Route path="/wigs/colored" element={<ColoredWigs />} /> 
                 
                 {/* Hair Extensions */}
                 <Route path="/hair-extensions" element={<HairExtensions />} />
@@ -84,7 +95,7 @@ const App = () => (
                 <Route path="/textures/virgin-deepwave" element={<VirginDeepwave />} />
                 <Route path="/textures/yaki-straight" element={<YakiStraight />} />
                 <Route path="/textures/raw-burmese-curls" element={<RawBurmeseCurls />} />
-                <Route path="/textures/raw-cambodian-curls" element={<RawCambodianCurls />} /> */} */
+                <Route path="/textures/raw-cambodian-curls" element={<RawCambodianCurls />} /> */}
                 
                 {/* Other Routes */}
                 <Route path="/salon" element={<Salon />} />
