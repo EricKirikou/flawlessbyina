@@ -10,9 +10,9 @@ const HeroBanner = () => {
             Beauty Tips & Inspiration for <span className="text-pink-600">Everyone</span>
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            Discover luxury Raw/ Virgin hair from Vietnam and South India. 
-            Ethically sourced, both processed and unprocessed, for my 
-            flawless queens who expect nothing less than 
+            Discover luxury Raw/ Virgin hair from Vietnam and South India.
+            Ethically sourced, both processed and unprocessed, for my
+            flawless queens who expect nothing less than
             excellence and quality
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -25,8 +25,13 @@ const HeroBanner = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full opacity-20 md:opacity-40 bg-[url('https://st4.depositphotos.com/10614052/38566/i/450/depositphotos_385665488-stock-photo-unusual-wig-comb-cosmetics-hair.jpg')] bg-cover bg-center"></div>
-    </div>
+      <div className="absolute bottom-0 right-0 w-full md:w-1/2 h-full overflow-hidden">
+        <img
+          src="/lovable-uploads/ina.jpg"
+          alt="Flawless By Ina beauty products"
+          className="w-full h-full object-cover opacity-20 md:opacity-40"
+        />
+      </div>    </div>
   );
 };
 
