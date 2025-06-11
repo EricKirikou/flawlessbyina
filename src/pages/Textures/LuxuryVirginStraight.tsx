@@ -112,9 +112,10 @@ const LuxuryVirginStraight = () => {
 
           <div className="prose max-w-none mb-6">
             <p className="text-gray-600 leading-relaxed">
-              Our premium virgin straight hair is collected from select donors in Brazil, 
-              maintaining its natural integrity with zero chemical processing. The hair boasts 
-              unparalleled softness, shine, and longevity.
+             We offer  premium virgin hair sourced ethically to ensure you receive 
+             the most luxurious experience — full, healthy strands that blend 
+             beautifully and look like your own.
+
             </p>
           </div>
 
@@ -139,7 +140,7 @@ const LuxuryVirginStraight = () => {
               </li>
               <li className="flex items-start">
                 <Check className="flex-shrink-0 h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                <span className="text-gray-700">Lasts 12+ months with proper care</span>
+                <span className="text-gray-700">Lasts 2+ years with proper care</span>
               </li>
             </ul>
           </div>
